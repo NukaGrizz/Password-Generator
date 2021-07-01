@@ -1,4 +1,11 @@
 // Assignment code here
+var passLength = function() {
+  length = window.prompt("Set password length between '8' and '125' characters");
+  if (length < 8 || length > 125) {
+    passLength();
+  };
+};
+
 var generatePassword = function() {
   var pass= "";
   var characters = "";
@@ -23,16 +30,14 @@ var generatePassword = function() {
   };
   console.log(characters);
 
-  var length = window.prompt("Set password length between '8' and '125' characters");
+  passLength();
 
-
-  
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return pass;
+  var characters = characters;
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+    pass += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return pass;
 };
 
 
@@ -45,8 +50,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
