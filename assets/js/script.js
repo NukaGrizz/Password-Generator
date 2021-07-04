@@ -1,4 +1,4 @@
-// Assignment code here
+// Global vars
 var pass= "";
 var characters = "";
 var charactersLength = "";
@@ -8,6 +8,7 @@ var capitalLetters = "";
 var numbers = "";
 var specialChar = "";
 
+//Var reset
 var reset = function(){
   pass= "";
   characters = "";
@@ -19,6 +20,7 @@ var reset = function(){
   specialChar = "";
 };
 
+//Establishing password length
 var passLength = function() {
   length = window.prompt("Set password length between '8' and '128' characters");
   if (length < 8 || length > 128) {
@@ -29,13 +31,14 @@ var passLength = function() {
   charactersLength = characters.length;
 };
 
+//Checking password meets set requirements
 var loop = function() {
   for ( var i = 0; i < length; i++ ) {
   pass += characters.charAt(Math.floor(Math.random() * charactersLength));
   };
   console.log(pass);
-  
-  if (specialChar) {
+
+    if (specialChar) {
     var checkSpec = /[^A-Za-z0-9]/;
     var specCheck = checkSpec.test(pass);
     console.log(specCheck);
@@ -52,8 +55,8 @@ var loop = function() {
     console.log(numCheck);
     if(numCheck){
     } else {
-      pass = "";
-      loop();
+        pass = "";
+        loop();
     };
   };
 
@@ -63,8 +66,8 @@ var loop = function() {
     console.log(capCheck);    
     if(capCheck){
     } else {
-      pass = "";
-      loop();
+        pass = "";
+        loop();
     };
   };
 
@@ -74,12 +77,13 @@ var loop = function() {
     console.log(lowCheck);      
     if(lowCheck){
     } else {
-      pass = "";
-      loop();
+        pass = "";
+        loop();
     };   
   };
 };
 
+//Generating password and collecting requirements
 var generatePassword = function() {
 
   lowerLetters = window.confirm('Would you like to include lowercase characters in your password?');
