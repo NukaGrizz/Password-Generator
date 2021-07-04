@@ -12,7 +12,7 @@ A password generator that generates a password between 8 to 128 characters based
 https://nukagrizz.github.io/Password-Generator/
 
 ## Screenshot
-![Screenshot](./screenshots/)
+![Screenshot](./assets/screenshots/Password-Generator-Screenshot.png)
 
 ## Contribution
 Made by NukaGrizz aka.Joe Tremols
